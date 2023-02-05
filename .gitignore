@@ -1,0 +1,19 @@
+.DS_Store
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+build/
+node_modules/
+npm-debug.log*
+Thumbs.db
+.vscode/
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
