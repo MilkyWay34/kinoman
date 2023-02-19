@@ -16,8 +16,8 @@ export default class CommentsModel {
 
   get = (film) => {
     this.#comments = film.comments.map((commentId) =>
-        this.#allComments.find((comment) =>
-            comment.id === commentId)
+      this.#allComments.find((comment) =>
+        comment.id === commentId)
     );
 
     return this.#comments;

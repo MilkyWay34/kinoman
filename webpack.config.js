@@ -1,25 +1,29 @@
-const path = require('path'); // Подключаем модуль Node.js для работы с путями на компьютере
-const CopyPlugin = require("copy-webpack-plugin"); // Подключаем плагин
+const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    entry: './src/main.js', // Указывает точку входа - наш главный JavaScript-файл проекта
+    entry: './src/main.js',
     output: {
-        filename: 'bundle.js', // Задаём название итоговому бандлу
-        path: path.resolve(__dirname, 'build'), // Указываем, куда нужно положить бандл после создания
-        clean: true, // Отмечаем, что перед сохранением обновлённого бандла старые файлы нужно удалить
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'build'),
+        clean: true,
     },
-    devtool: 'source-map', // Аквтивируем генерацию source-maps
+    devtool: 'source-map',
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: 'public' }], // Добавляем плагин в сборку и указываем директорию, откуда нужно скопировать файлы
-       }),
+            patterns: [{ from: 'public' }],
+        }),
     ],
     module: {
         rules: [
             {
-                test: /\\.js$/, // Указываем регулярным выражением, что преобразовывать нужно только JavaScript-файлы
-                exclude: /(node_modules)/, // Уточняем, что файлы из директории node_modules трогать не нужно
-                use: ['babel-loader'] // Указываем, какой лоадер использовать
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
             }
         ]
     }

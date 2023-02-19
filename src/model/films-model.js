@@ -5,4 +5,3 @@ export default class FilmsModel {
 
   get = () => this.#films;
 }
-
