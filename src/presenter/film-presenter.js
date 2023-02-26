@@ -1,5 +1,5 @@
-import FilmCardView from '../../../tempjs/code9/src/view/film-card-view.js';
-import {render, replace, remove} from '../../../tempjs/code9/src/framework/render.js';
+import FilmCardView from '../view/film-card-view.js';
+import {render, replace, remove} from '../framework/render.js';
 
 export default class FilmPresenter {
   #container = null;
