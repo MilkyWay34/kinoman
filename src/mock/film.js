@@ -13,12 +13,12 @@ const getDate = (type) => {
   switch (type) {
     case DateType.FILM_INFO:
       date.setFullYear(
-          date.getFullYear() - getRandomInteger(YearsDuration.MIN, YearsDuration.MAX)
+        date.getFullYear() - getRandomInteger(YearsDuration.MIN, YearsDuration.MAX)
       );
       break;
     case DateType.USER_DETAILS:
       date.setDate(
-          date.getDate() - getRandomInteger(DaysDuration.MIN, DaysDuration.MAX)
+        date.getDate() - getRandomInteger(DaysDuration.MIN, DaysDuration.MAX)
       );
       break;
   }
@@ -55,8 +55,8 @@ const generateFilms = () => {
     const hasComments = getRandomInteger(0, 1);
 
     const filmCommentsCount = (hasComments)
-        ? getRandomInteger(1, MAX_COMMENTS_ON_FILM)
-        : 0;
+      ? getRandomInteger(1, MAX_COMMENTS_ON_FILM)
+      : 0;
 
     totalCommentsCount += filmCommentsCount;
 
@@ -65,10 +65,10 @@ const generateFilms = () => {
     return {
       id: String(index + 1),
       comments: (hasComments)
-          ? Array.from({length: filmCommentsCount},
-              (_value, commentIndex) => String(totalCommentsCount - commentIndex)
-          )
-          : [],
+        ? Array.from({length: filmCommentsCount},
+          (_value, commentIndex) => String(totalCommentsCount - commentIndex)
+        )
+        : [],
       filmInfo: film,
       userDetails: {
         watchlist: Boolean(getRandomInteger(0, 1)),
